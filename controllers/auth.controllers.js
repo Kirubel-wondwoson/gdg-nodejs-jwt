@@ -22,6 +22,7 @@ exports.SignUp = async (req, res) => {
     })
 
     const token = jwt.sign({role: role}, process.env.JWT_SECRET, {expiresIn: '1h'});
+    
     res.status(201).json({
       message: 'Signup successful!',
       user: newUser,
